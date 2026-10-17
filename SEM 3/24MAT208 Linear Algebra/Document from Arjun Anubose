@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python (Pyodide)",
+      "language": "python",
+      "name": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "000cdc57-6dfb-4a5c-ade9-97cbcc066e7a",
+      "cell_type": "code",
+      "source": "# Operator Overloading Assignment\n\n# 1. Operator Overloading for '-'\n\nclass Temperature:\n    def __init__(self, value):\n        self.value = value\n\n    def __sub__(self, other):\n        return self.value - other.value\n\n\nt1 = Temperature(35)\nt2 = Temperature(20)\n\nprint(\"Temperature difference =\", t1 - t2, \"°C\")\n# Here __sub__ overloads the '-' operator.\n\n\n# 2. Operator Overloading for '=='\n\nclass Book:\n    def __init__(self, pages):\n        self.pages = pages\n\n    def __eq__(self, other):\n        return self.pages == other.pages\n\n\nb1 = Book(300)\nb2 = Book(300)\n\nprint(b1 == b2)\n# Here __eq__ overloads the '==' operator.\n\n\n# 3. Operator Overloading for '<'\n\nclass Product:\n    def __init__(self, price):\n        self.price = price\n\n    def __lt__(self, other):\n        return self.price < other.price\n\n\np1 = Product(500)\np2 = Product(800)\n\nprint(p1 < p2)\n# Here __lt__ overloads the '<' operator.\n\n\n# 4. Operator Overloading for '>'\n\nclass Battery:\n    def __init__(self, capacity):\n        self.capacity = capacity\n\n    def __gt__(self, other):\n        return self.capacity > other.capacity\n\n\nbat1 = Battery(5000)\nbat2 = Battery(4000)\n\nprint(bat1 > bat2)\n# Here __gt__ overloads the '>' operator.",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Temperature difference = 15 °C\nTrue\nTrue\nTrue\n"
+        }
+      ],
+      "execution_count": 1
+    }
+  ]
+}
